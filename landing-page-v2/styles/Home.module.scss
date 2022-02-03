@@ -1,0 +1,20 @@
+.container {
+  height: 700px;
+  // background-color: burlywood;
+}
+
+.section1 {
+  display: flex;
+
+  &_content {
+    width: 50%;
+  }
+
+  &_image {
+    width: 610px; height: 380px;
+    position: absolute;
+    img {
+      width: 100%;
+    }
+  }
+}
