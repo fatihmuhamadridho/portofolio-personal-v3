@@ -1,5 +1,7 @@
 .container {
   padding: 0 2rem;
+  background-color: black;
+  color: white;
 }
 
 .main {
@@ -113,4 +115,51 @@
     width: 100%;
     flex-direction: column;
   }
+}
+
+.toggle {
+
+  .label {
+    width: 240px; height: 100px;
+    background-color: #5BA9D3;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 950;
+
+    img {
+      top: 1000px;
+      left: 1000px;
+    }
+  }
+
+  .checkbox {
+    opacity: 0;
+    width: 240px; height: 100px;
+    position: absolute;
+    z-index: 950;
+  }
+
+  &_sun {
+    width: 90px; height: 90px;
+    margin: 4px;
+    display: flex;
+    background-color: #F6D35A;
+    border-radius: 100%;
+    transition: transform 0.3s linear;
+    box-shadow: 
+      0px 0px 30px rgba(242, 213, 138, 0.2)
+      , 0px 0px 10px rgba(242, 213, 138, 0.5)
+      , inset 0px -2px 10px rgba(200, 168, 58, 0.3);
+  }
+
+  .checkbox:checked + .label .toggle_sun {
+    transform: translateX(-140px);
+  }
+
+}
+
+.toggle_cloud {
+  display: inline-block;
 }
