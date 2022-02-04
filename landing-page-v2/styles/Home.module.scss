@@ -1,20 +1,134 @@
 .container {
-  height: 700px;
+  height: 5200px;
   // background-color: burlywood;
+  * {
+    margin: 0px;
+  }
 }
 
 .section1 {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  line-height: 30px;
 
   &_content {
-    width: 50%;
+    width: 47.5%;
+
+    * {
+      margin: 20px 0px;
+    }
+
+    button {
+      width: 250px; height: 60px;
+      background-color: #F53838;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .buttonfilter {
+      display: flex;
+      position: absolute;
+      transform: translateX(15px) translateY(-70px);
+      width: 210px; height: 60px;
+      background: rgba(245, 56, 56, 0.35);
+      filter: blur(54px);
+      z-index: -1;
+    }
   }
 
   &_image {
-    width: 610px; height: 380px;
-    position: absolute;
-    img {
-      width: 100%;
+    width: 47.5%; height: 50%;
+    margin-top: 40px;
+  }
+}
+
+.graphbar {
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  border-radius: 15px;
+
+  * {
+    margin: 0; padding: 0;
+  }
+
+  &_detail {
+    display: flex;
+    align-items: center;
+
+    &_users, &_locations, &_servers {
+      padding: 65px 100px;
+      display: flex;
+      align-items: center;
+
+      &_icon {
+        width: 55px; height: 55px;
+        margin-right: 20px;
+        background-color: #FFECEC;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 70px;
+      }
+
+      &_header {
+        margin-bottom: 5px;
+        font-size: 25px;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.graphbarfilter {
+  width: 1000px; height: 190px;
+  position: absolute;
+  display: flex;
+  border-radius: 10px;
+  background: #0D1025;
+  opacity: 0.06;
+  filter: blur(114px);
+  transform: translateY(100px);
+  z-index: -1;
+}
+
+.section2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &_image {
+    width: 47.5%;
+
+  }
+
+  &_content {
+    width: 47.5%;
+    padding-left: 50px;
+
+    * {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0px;
+
+      li {
+        display: flex;
+        align-items: center;
+        margin: 0px;
+
+        p {
+          font-size: 14px;
+          margin-left: 10px;
+        }
+      }
     }
   }
 }

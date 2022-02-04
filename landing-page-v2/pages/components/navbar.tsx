@@ -21,8 +21,9 @@ export default function Navbar() {
                 <ul>
                     <li><a href="">About</a></li>
                     <li><a href="">Features</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">About</a></li>
+                    <li><a href="">Pricing</a></li>
+                    <li><a href="">Testimonials</a></li>
+                    <li><a href="">Help</a></li>
                 </ul>
             </div>
             <div className={styles.navbar_sign}>
