@@ -8,7 +8,7 @@
     justify-content: space-between;
     font-size: 16px;
     font-weight: normal;
-    z-index: 999;
+    z-index: 9999999;
 
     * {
         margin: 0px;
@@ -39,6 +39,12 @@
                 color: #4F5665;
             }
         }
+
+        &_active {
+            color: black !important;
+            font-weight: bold;
+            transition: 0.4s;
+        }
     }
 
     &_sign {
@@ -53,14 +59,25 @@
             font-weight: bold;
         }
 
+        &in button:active {
+            color: #F53855;
+        }
+
         &up {
             display: flex;
             align-items: center;
             justify-content: center;
             border: 1px solid #F53855 !important;
             border-radius: 50px;
+
             button {
                 color: #F53855;
+            }
+
+            :active {
+                color: white;
+                background-color: #F53855;
+                border-radius: 50px;
             }
         }
     }

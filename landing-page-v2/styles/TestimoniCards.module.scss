@@ -1,0 +1,28 @@
+.cards_testimoni {
+    min-width: 400px; height: 230px;
+    max-width: 400px;
+    margin-right: 50px; padding: 30px;
+    border: 2px solid #DDDDDD;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+
+    &_profile {
+        margin-bottom: 20px !important;
+    }
+
+    &_profile_detail {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        &_person, &_rating {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+.cards_testimoni:hover {
+    border: 2px solid #F53838;
+}

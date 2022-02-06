@@ -1,18 +1,23 @@
 .layout {
   display: flex;
   flex-direction: column;
-  .section1, .section2 {
+  .section1, .section2, .section4 {
     padding: 0px 130px;
     background-color: white;
   }
   .section3 {
     padding: 0px 130px;
   }
+  .testimoni {
+    margin-left: 130px;
+  }
 }
 
 .container {
   // height: 5200px;
   // background-color: burlywood;
+  display: flex;
+  flex-direction: column;
   * {
     margin: 0px;
   }
@@ -45,13 +50,17 @@
       z-index: 999;
     }
 
+    button:active {
+      background-color: #cc2d2d;
+    }
+
     .buttonfilter {
       display: flex;
       position: absolute;
-      transform: translateX(15px) translateY(20px);
+      transform: translateX(15px) translateY(40px);
       width: 210px; height: 40px;
       background: rgba(245, 56, 56, 0.35);
-      filter: blur(54px);
+      filter: blur(24px);
       z-index: 1;
     }
   }
@@ -142,12 +151,15 @@
       li {
         display: flex;
         align-items: center;
-        margin: 0px;
+        margin-bottom: 10px;
+
+        * {
+          margin: 0px;
+        }
 
         p {
           font-size: 14px;
           margin-left: 10px;
-          margin-bottom: 10px !important;
         }
       }
     }
@@ -222,6 +234,12 @@
       cursor: pointer;
     }
 
+    &_freeplan_bottom button:active,
+    &_standardplan_bottom button:active {
+      background-color: #F53838;
+      color: white;
+    }
+
     &_premiumplan_bottom {
       button {
         color: #fff;
@@ -249,11 +267,144 @@
 
 .section4 {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 
   &_content {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+}
+
+.testimoni {
+  display: flex;
+  overflow-y: auto;
+  // padding-bottom: 80px;
+  scroll-behavior: smooth;
+}
+
+.testimoni::-webkit-scrollbar {
+  width: 0px;
+}
+
+// .testimoni::-webkit-scrollbar {
+//   width: 20px; height: 20px;
+// }
+
+// .testimoni::-webkit-scrollbar-track {
+//   border-radius: 100vh;
+//   background: #f7f4ed;
+// }
+
+// .testimoni::-webkit-scrollbar-thumb {
+//   background: #e0cbcb;
+//   border-radius: 100vh;
+//   border: 3px solid #f6f7ed;
+// }
+
+// .testimoni::-webkit-scrollbar-thumb:hover {
+//   background: #c0a0b9;
+// }
+
+.testimoni_scroll {
+  width: 100%;
+  margin: 50px 0px 180px 0px;
+  padding: 0px 130px;
+  display: flex;
+  justify-content: space-between;
+
+  &_bar {
+    display: flex;
+
+    &_active, &_notactive {
+      margin-right: 15px;
+      transition: 0.6s;
+    }
+
+    &_active {
+      width: 45px; height: 15px;
+      background-color: #F53838;
+      border-radius: 10px;
+    }
+
+    &_notactive {
+      width: 15px; height: 15px;
+      background-color: #DDE0E4;
+      border-radius: 10px;
+    }
+  }
+
+  &_button {
+    display: flex;
+
+    &_icon {
+      width: 60px; height: 60px;
+      margin-left: 20px;
+      color: #F53838;
+    }
+
+    &_icon:active {
+      color: #cc2d2d;
+    }
+  }
+}
+
+
+.subscribe {
+  display: flex;
+  justify-content: center;
+
+  &_container {
+    width: 80%;
+    display: flex;
+    position: absolute;
+    background-color: white;
+    justify-content: space-between;
+    transform: translateY(-120px);
+    border: 2px solid #DDDDDD;
+    border-radius: 10px;
+
+    * {
+      margin: 0px;
+    }
+
+    &_content, &_button {
+      padding: 30px 70px;
+    }
+
+    &_content {
+      width: 400px;
+    }
+
+    &_button {
+      display: flex;
+      align-items: center;
+
+      button {
+        width: 250px; height: 60px;
+        background-color: #F53838;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 25px;
+        z-index: 999;
+        cursor: pointer;
+      }
+
+      &_filter {
+        width: 200px; height: 60px;
+        position: absolute;
+        display: flex;
+        background-color: black;
+        background: rgba(245, 56, 56, 0.35);
+        filter: blur(24px);
+        border-radius: 10px;
+        transform: translateX(20px) translateY(30px);
+      }
+    }
   }
 }

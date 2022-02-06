@@ -10,10 +10,36 @@ import {
   faServer,
   faCheckCircle,
   faCheck,
+  faArrowAltCircleLeft,
+  faArrowAltCircleRight,
 } from '@fortawesome/free-solid-svg-icons';
-import Navbar from './components/navbar'
+import Navbar from './components/navbar';
+import TestimoniCards from './components/testimoniCards';
+import { useEffect, useState } from 'react';
+import $ from 'jquery'
+import Footer from './components/footer'
 
 const Home: NextPage = () => {
+  let [scrollParam, setScrollParam] = useState<number>(0);
+
+  useEffect(() => {
+    const scroll = document.querySelector('#testimoni');
+    scroll?.addEventListener("scroll", event => {
+      setScrollParam(scroll.scrollLeft)
+      // console.log(scroll.scrollWidth)
+    }, { passive: true });
+  }, [setScrollParam])
+
+  function scrollLeftButton() {
+    $('html, body, #testimoni').scrollLeft(scrollParam - 1000)
+  }
+
+  function scrollRightButton() {
+    $('html, body, #testimoni').scrollLeft(scrollParam + 1000)
+  }
+
+  // console.log(scrollParam)
+
   return (
     <div className={styles.layout}>
       <Head>
@@ -36,9 +62,9 @@ const Home: NextPage = () => {
               height='100%'
               layout='responsive'
               objectFit='contain'
+              priority
             />
           </div>
-          {/* <img src="/Illustration_1.png" alt="" /> */}
         </div>
         <div className={styles.graphbar}>
           <div className={styles.graphbar_detail}>
@@ -101,6 +127,7 @@ const Home: NextPage = () => {
               height={'100%'}
               layout='responsive'
               objectFit='contain'
+              priority
             />
           </div>
           <div className={styles.section2_content}>
@@ -269,30 +296,96 @@ const Home: NextPage = () => {
               height={'55%'}
               layout='responsive'
               objectFit='contain'
+              priority
             />
           </div>
         </div>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <div style={{ width: "1000px" }}>
-            <Image 
-              src={"/Sponsored.png"}
-              alt=''
-              width={'100%'}
-              height={'20%'}
-              layout='responsive'
-              objectFit='contain'
-            />
+        <div style={{ width: "100%" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ width: "1000px" }}>
+              <Image 
+                src={"/Sponsored.png"}
+                alt=''
+                width={'100%'}
+                height={'20%'}
+                layout='responsive'
+                objectFit='contain'
+                priority
+              />
+            </div>
           </div>
         </div>
         <div className={styles.section4} id='section4'>
           <div className={styles.section4_content}>
             <p style={{ width: "450px", height: "100px", fontSize: "35px", fontWeight: "500", lineHeight: "50px", textAlign: "center" }}>Trusted by Thousand of Happy Customer</p>
-            <p style={{ width: "555px", height: "60px", marginTop: "20px", fontSize: "16px", fontWeight: "400", lineHeight: "30px", textAlign: "center"}}>See LaslesVPN everywhere to make it easier for you when you move locations.</p>
-          </div>
-          <div className={styles.section4_testimoni}>
-
+            <p style={{ width: "555px", height: "60px", margin: "20px 0px 60px 0px", fontSize: "16px", fontWeight: "400", lineHeight: "30px", textAlign: "center", color: "#4F5665" }}>These are the stories of our customers who have joined us with great pleasure when using this crazy feature.</p>
           </div>
         </div>
+        <div className={styles.testimoni} id="testimoni">
+          <TestimoniCards
+            imageSrc={'person1.png'}
+            name={'Viezh Robert'}
+            address={'Warsaw, Poland'}
+            rating={'4.5'}
+            text={'Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best'}
+          />
+          <TestimoniCards
+            imageSrc={'person2.png'}
+            name={'Yessica Christy'}
+            address={'Shanxi, China'}
+            rating={'4.5'}
+            text={'I like it because I like to travel far and still can connect with high speed'}
+          />
+          <TestimoniCards
+            imageSrc={'person2.png'}
+            name={'Yessica Christy'}
+            address={'Shanxi, China'}
+            rating={'4.5'}
+            text={'I like it because I like to travel far and still can connect with high speed'}
+          />
+          <TestimoniCards
+            imageSrc={'person2.png'}
+            name={'Yessica Christy'}
+            address={'Shanxi, China'}
+            rating={'4.5'}
+            text={'I like it because I like to travel far and still can connect with high speed'}
+          />
+        </div>
+        <div className={styles.testimoni_scroll}>
+          <div className={styles.testimoni_scroll_bar}>
+            <div className={scrollParam < 125 ? styles.testimoni_scroll_bar_active : styles.testimoni_scroll_bar_notactive}></div>
+            <div className={scrollParam >= 125 && scrollParam < 250 ? styles.testimoni_scroll_bar_active : styles.testimoni_scroll_bar_notactive}></div>
+            <div className={scrollParam >= 250 && scrollParam < 375 ? styles.testimoni_scroll_bar_active : styles.testimoni_scroll_bar_notactive}></div>
+            <div className={scrollParam >= 375 ? styles.testimoni_scroll_bar_active : styles.testimoni_scroll_bar_notactive}></div>
+          </div>
+          <div className={styles.testimoni_scroll_button}>
+            <div className={styles.testimoni_scroll_button_icon}>
+              <FontAwesomeIcon icon={faArrowAltCircleLeft} size='1x' onClick={() => scrollLeftButton()} />
+            </div>
+            <div className={styles.testimoni_scroll_button_icon}>
+              <FontAwesomeIcon 
+                icon={faArrowAltCircleRight} 
+                size='1x'
+                onClick={() => scrollRightButton()}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.subscribe}>
+        <div className={styles.subscribe_container}>
+          <div className={styles.subscribe_container_content}>
+            <p style={{ width: "370px", marginBottom: "20px", fontSize: "35px", fontWeight: "500", lineHeight: "45px" }}>Subscribe Now for Get Special Features!</p>
+            <p style={{ width: "400px", fontSize: "16px", fontWeight: "400", lineHeight: "30px" }}>Let&apos;s subscribe with us and find the fun.</p>
+          </div>
+          <div className={styles.subscribe_container_button}>
+            <button onClick={() => Swal.fire('No yet available, sorry.')}>Subscribe Now</button>
+            <div className={styles.subscribe_container_button_filter}></div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.section5} id='section5'>
+        <Footer />
       </div>
     </div>
   )
