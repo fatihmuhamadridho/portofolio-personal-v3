@@ -323,6 +323,13 @@ const Home: NextPage = () => {
         </div>
         <div className={styles.testimoni} id="testimoni">
           <TestimoniCards
+            imageSrc={'person0.jpeg'}
+            name={'Fatih Muhamad Ridho'}
+            address={'Tangerang, Indonesia'}
+            rating={'5.0'}
+            text={'This is very unusual for my business that currently requires a virtual private network that has high security.'}
+          />
+          <TestimoniCards
             imageSrc={'person1.png'}
             name={'Viezh Robert'}
             address={'Warsaw, Poland'}
@@ -337,37 +344,26 @@ const Home: NextPage = () => {
             text={'I like it because I like to travel far and still can connect with high speed'}
           />
           <TestimoniCards
-            imageSrc={'person2.png'}
-            name={'Yessica Christy'}
-            address={'Shanxi, China'}
-            rating={'4.5'}
-            text={'I like it because I like to travel far and still can connect with high speed'}
-          />
-          <TestimoniCards
-            imageSrc={'person2.png'}
-            name={'Yessica Christy'}
-            address={'Shanxi, China'}
-            rating={'4.5'}
-            text={'I like it because I like to travel far and still can connect with high speed'}
+            imageSrc={'person3.png'}
+            name={'Kim Young Jou'}
+            address={'Seoul, South Korea'}
+            rating={'4.6'}
+            text={'This is very unusual for my business that currently requires a virtual private network that has high security.'}
           />
         </div>
         <div className={styles.testimoni_scroll}>
           <div className={styles.testimoni_scroll_bar}>
-            <div className={scrollParam < 125 ? styles.testimoni_scroll_bar_active : styles.testimoni_scroll_bar_notactive}></div>
-            <div className={scrollParam >= 125 && scrollParam < 250 ? styles.testimoni_scroll_bar_active : styles.testimoni_scroll_bar_notactive}></div>
-            <div className={scrollParam >= 250 && scrollParam < 375 ? styles.testimoni_scroll_bar_active : styles.testimoni_scroll_bar_notactive}></div>
-            <div className={scrollParam >= 375 ? styles.testimoni_scroll_bar_active : styles.testimoni_scroll_bar_notactive}></div>
+            <div className={scrollParam < 180 ? styles.testimoni_scroll_bar_active : styles.testimoni_scroll_bar_notactive}></div>
+            <div className={scrollParam >= 180 && scrollParam < 360 ? styles.testimoni_scroll_bar_active : styles.testimoni_scroll_bar_notactive}></div>
+            <div className={scrollParam >= 360 && scrollParam < 540 ? styles.testimoni_scroll_bar_active : styles.testimoni_scroll_bar_notactive}></div>
+            <div className={scrollParam >= 540 ? styles.testimoni_scroll_bar_active : styles.testimoni_scroll_bar_notactive}></div>
           </div>
           <div className={styles.testimoni_scroll_button}>
             <div className={styles.testimoni_scroll_button_icon}>
               <FontAwesomeIcon icon={faArrowAltCircleLeft} size='1x' onClick={() => scrollLeftButton()} />
             </div>
             <div className={styles.testimoni_scroll_button_icon}>
-              <FontAwesomeIcon 
-                icon={faArrowAltCircleRight} 
-                size='1x'
-                onClick={() => scrollRightButton()}
-              />
+              <FontAwesomeIcon icon={faArrowAltCircleRight} size='1x' onClick={() => scrollRightButton()} />
             </div>
           </div>
         </div>

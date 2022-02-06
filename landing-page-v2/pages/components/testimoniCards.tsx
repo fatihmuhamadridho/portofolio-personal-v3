@@ -11,7 +11,7 @@ export default function TestimoniCards(props: any) {
             <div className={styles.cards_testimoni_profile}>
                 <div className={styles.cards_testimoni_profile_detail}>
                     <div className={styles.cards_testimoni_profile_detail_person}>
-                        <div style={{ width: "50px", borderRadius: "100%" }}>
+                        <div style={{ width: "50px", borderRadius: "100% !important" }}>
                             <Image
                                 src={`/profile/${props.imageSrc}`}
                                 alt=''
