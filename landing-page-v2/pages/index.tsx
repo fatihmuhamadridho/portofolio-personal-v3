@@ -43,6 +43,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.layout}>
       <Head>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9923826095006802" crossOrigin="anonymous"></script>
         <title>Lasles VPN</title>
       </Head>
       <Navbar />

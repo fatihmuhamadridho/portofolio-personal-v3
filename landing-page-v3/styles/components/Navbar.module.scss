@@ -1,0 +1,49 @@
+.navbar {
+    width: 100%;
+    padding: 0px 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &_left, &_right {
+        padding: 25px 0px;
+    }
+
+    &_left {
+        display: flex;
+        align-items: center;
+
+        &_list ul {
+            display: flex;
+            list-style: none;
+            padding-left: 145px;
+
+            li {
+                padding-right: 40px;
+            }
+        }
+    }
+
+    &_right {
+        display: flex;
+        align-items: center;
+
+        &_getstarted, &_search {
+            margin-left: 20px;
+        }
+
+        &_login button, &_getstarted button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        &_getstarted button {
+            width: 120px; height: 50px;
+            background-color: #7854F7;
+            color: white;
+            border-radius: 5px;
+        }
+    }
+}
